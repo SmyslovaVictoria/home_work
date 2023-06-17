@@ -12,3 +12,22 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+// Используй массив объектов images для создания элементов <img> вложенных в <li>. 
+// Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
+
+const gallery = document.querySelector(".gallery");
+console.log(gallery);
+
+for (const img of images) {
+  console.log(img.url);
+  const markup = ` <li class="img">
+  <img class="foto" src="${img.url}" alt="${img.alt}"
+  width="200"
+  height="200"
+  >
+  </li>`;
+
+  gallery.insertAdjacentHTML("beforebegin", markup);
+  console.log(markup)
+}
